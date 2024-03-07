@@ -7,7 +7,7 @@ public:
                 if (nums[i] + nums[j] == target) {
                     twoSumIndices.push_back(i);
                     twoSumIndices.push_back(j);
-                    break;
+                    return twoSumIndices;
                 }
             }
         }
