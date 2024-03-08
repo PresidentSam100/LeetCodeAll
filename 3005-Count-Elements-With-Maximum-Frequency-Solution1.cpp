@@ -7,7 +7,7 @@ public:
         }
         int freqTotal = 1;
         int freqValue = 0;
-        for (auto x : element_counts) {
+        for (const auto& x : element_counts) {
             if (x.second > freqValue) {
                 freqTotal = x.second;
                 freqValue = x.second;
