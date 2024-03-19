@@ -4,7 +4,7 @@ public:
         int encryptedSum = 0;
         for (int num : nums) {
             int encryptedNum = encrypt(num);
-            encryptedSum = encryptedSum + encryptedNum;
+            encryptedSum += encryptedNum;
         }
         return encryptedSum;
     }
@@ -14,16 +14,15 @@ public:
         int length = 0;
         while (x > 0) {
             int digit = x % 10;
-            x = x / 10;
-            length = length + 1;
+            x /= 10;
+            length++;
             largestDigit = max(largestDigit, digit);
         }
-        int encryptedNumber = 0;
+        string encryptedNumber = "";
         while (length > 0) {
-            length = length - 1;
-            encryptedNumber = encryptedNumber * 10;
-            encryptedNumber = encryptedNumber + largestDigit;
+            length--;
+            encryptedNumber += "" + to_string(largestDigit);
         }
-        return encryptedNumber;
+        return stoi(encryptedNumber);
     }
 };
